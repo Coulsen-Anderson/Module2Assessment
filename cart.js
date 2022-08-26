@@ -34,10 +34,7 @@ const cart = [
 ]
 
 //CODE HERE
-const sumit = cart((price.reduce 
-const summedPrice = cart.reduce((arr, price) => {
-    return arr += price
-})
+const summedPrice = cart.reduce((total, current) => total + current.price, 0)
 
 console.log(summedPrice)
 
@@ -58,6 +55,13 @@ console.log(summedPrice)
 */
 
 //CODE HERE
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    const totalBeforeCoupon = cartTotal * (1 + tax)
+    const finalPrice = totalBeforeCoupon - couponValue
+
+    return finalPrice
+}
+console.log(calcFinalPrice(40, 5, .06))
 
 
 
@@ -84,6 +88,13 @@ console.log(summedPrice)
 /*
     TEXT ANSWER HERE
 
+    firstName: 'string',
+    lastName: 'string',
+    address: string
+    state: string
+    phonenumber: number
+
+
 */
 
 /*
@@ -92,3 +103,11 @@ console.log(summedPrice)
 */
 
 //CODE HERE
+
+const firstCustomer = {
+    firstName: 'Coulsen',
+    lastName: 'Anderson',
+    address: 'Eagle Mountain',
+    state: 'Utah',
+    phonenumber: '801801801'
+}

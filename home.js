@@ -25,7 +25,7 @@
 let greetUser = (username) => {
     return `Welcome back, ${username}`
 }
-console.log(greetUser('coulsen'))
+console.log(greetUser('Coulsen'))
 
 
 
@@ -57,9 +57,8 @@ const deliveryAreaZipCodes = [85205, 85204, 85203, 85213, 85206]
 let canWeDeliver = zipCode => {
     for (let i = 0; i < deliveryAreaZipCodes.length; i++){
         if(zipCode === deliveryAreaZipCodes[i])
-        return "You're in our dleivery zone!"
-    else return "Sorry, we can't deliver to that adderess."
-    }
+        return "You're in our delivery zone!"
+    }return "Sorry, we can't deliver to that adderess."
     // if(zipCode === deliveryAreaZipCodes.forEach)
     // return "You're in our delivery zone!"
     // else {
@@ -67,7 +66,7 @@ let canWeDeliver = zipCode => {
     }
 
 
-console.log(canWeDeliver(852775))
+console.log(canWeDeliver(85204))
 
 
 
@@ -89,13 +88,13 @@ console.log(canWeDeliver(852775))
 */
 
 // CODE HERE
-let canWeDeliverTwo = zipCode => {
-    if(zipCode === deliveryAreaZipCodes.includes)
+let canWeDeliverTwo = (zipCode) => {
+    if(deliveryAreaZipCodes.includes(zipCode))
     return "We can deliver in you're area!"
     else return "We can't deliver in you're area."
 }
 
-console.log(canWeDeliver(85205))
+console.log(canWeDeliver(85206))
 
 
 //////////////////PROBLEM 3////////////////////
@@ -132,7 +131,11 @@ const deals = [
 */
 
 //CODE HERE
+// console.log(deals[0].title)
 
+deals[0].title = deals[0].title.replace('15', '10')
+
+console.log(deals[0].title)
 
 /*
     The restaurant is going to continue its
@@ -148,3 +151,6 @@ const deals = [
 */
 
 //CODE HERE
+deals[1].desc = deals[1].desc.trim().replace('March', 'April')
+
+console.log(deals)

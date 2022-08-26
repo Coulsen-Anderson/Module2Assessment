@@ -51,7 +51,7 @@ let pizza = {
 */
 
 //CODE HERE
-console.log(pizza.popularity)
+// console.log(pizza.popularity)
 
 /*
     Second, log the second tag in your pizza's
@@ -61,7 +61,7 @@ console.log(pizza.popularity)
 */
 
 //CODE HERE
-console.log(pizza.tags[0, 1])
+// console.log(pizza.tags[1])
 
 /*
     Third, destructure the price off of the
@@ -71,8 +71,9 @@ console.log(pizza.tags[0, 1])
 */
 
 //CODE HERE
-let {price} = pizza
-console.log(price)
+// let {price} = pizza
+let { price: newPrice} = pizza
+console.log(newPrice)
 
 /*
     Fourth, and last, destructure the category
@@ -83,7 +84,7 @@ console.log(price)
 
 //CODE HERE
 let {category} = pizza
-console.log(category)
+// console.log(category)
 
 //////////////////PROBLEM 3////////////////////
 /* 
@@ -148,9 +149,14 @@ tags: ['Yummy', 'Greasy', 'Healthy']}]
 */
 
 //CODE HERE
-const tags1 = () => pizza.tags
-const filteredFood = foodArr.filter(tags1)
-console.log(filteredFood)
+
+const filteredFood = foodArr.filter((food) => {
+    if(food.tags.includes('Keto')){
+        return food
+    }
+})
+// console.log(filteredFood)
+
 
 
 
@@ -194,6 +200,16 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+const filterByProperty = (property, number, type) => {
+    const filteredFood = foodArr.filter((food) =>{
+        if(type === 'above'){
+            return food[property] >= number
+        }else{
+            return food[property] <= number
+        }
+    })
+    return filteredFood
+}
 
 
 /*
@@ -204,3 +220,4 @@ console.log(filteredFood)
 */
 
 //CODE HERE
+console.log(filterByProperty('popularity', 5, 'above'))
